@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": false,
+    "jsx": "react",
+   
+    "outDir": "./dist", // 编译后的文件输出目录
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"]
+}
