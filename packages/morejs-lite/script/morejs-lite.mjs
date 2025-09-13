@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 
-const rollup = require("rollup");
-const { nodeResolve } = require("@rollup/plugin-node-resolve");
-const commonjs = require("@rollup/plugin-commonjs");
-const typescript = require("@rollup/plugin-typescript");
-// const { terser } = require("rollup-plugin-terser");
-const { babel } = require("@rollup/plugin-babel");
-const html = require("@rollup/plugin-html");
-const postcss = require("rollup-plugin-postcss");
-const virtualEntry = require("./rollup-plugin-virtual-entry");
-const server = require("../node_modules/rollup-plugin-serve/dist/index.mjs");
-const livereload = require("rollup-plugin-livereload");
-const path = require("path");
-const fs = require("fs");
+import * as rollup from "rollup";
+import { nodeResolve } from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-node-resolve"
+import typescript from "@rollup/plugin-typescript"
+import { babel } from "@rollup/plugin-babel";
+
+import html from "@rollup/plugin-html";
+import postcss from "rollup-plugin-postcss";
+import virtualEntry from "./rollup-plugin-virtual-entry.mjs";
+import server from 'rollup-plugin-serve';
+import livereload from "rollup-plugin-livereload";
+import path from "path";
+import fs from "fs";
+
 
 const pwd = process.cwd();
 
@@ -83,7 +84,6 @@ const build = async (input, output, entryName, watch = false) => {
                 verbose: true,
                 delay: 100,
             }),
-            // terser(),
         ]
     };
 
@@ -105,7 +105,7 @@ const build = async (input, output, entryName, watch = false) => {
         };
 
         const watcher = rollup.watch(watchOptions);
-        
+
         watcher.on('event', event => {
             switch (event.code) {
                 case 'START':
@@ -147,7 +147,7 @@ const buildAll = async (watchMode = true) => {
     for (const entry of entries) {
         const input = path.join(pages, path.join(entry, "index.tsx"));
         const output = path.join(pwd, "dist", `${entry}.js`);
-        
+
         if (watchMode) {
             const watcher = await build(input, output, entry, true);
             watchers.push(watcher);
@@ -159,7 +159,7 @@ const buildAll = async (watchMode = true) => {
     if (watchMode) {
         console.log('\n👀 Watching for file changes...');
         console.log('Press Ctrl+C to stop watching\n');
-        
+
         // 处理进程退出
         process.on('SIGINT', () => {
             console.log('\n🛑 Stopping watchers...');

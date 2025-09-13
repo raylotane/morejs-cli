@@ -59,13 +59,15 @@ morejs-cli --entry ./src/pages/Home --mode production
 
 ## CLI 参数
 
-- `--entry` 入口页面目录（必填）
+- `--entry` 入口页面目录
 - `--port` 开发服务器端口（默认 3000）
 - `--mode` 构建模式（development 或 production，默认 development）
 
 ## 示例项目
 
 本仓库下 `example/morejs-demo` 提供了完整的多页面 React 示例，可参考其目录结构和用法。
+
+本仓库下 `packages/morejs-lite` 提供了一个轻量级的 React 多页面脚手架，适合快速了解和使用 `morejs-cli`
 
 ---
 

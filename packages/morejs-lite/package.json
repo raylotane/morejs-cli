@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "bin": {
-    "morejs-lite": "./script/morejs-lite.js"
+    "morejs-lite": "./script/morejs-lite.mjs"
   },
   "scripts": {
+    "dev": "node ./script/morejs-lite.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

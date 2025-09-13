@@ -1,4 +1,4 @@
-const path = require('path');
+
 
 function virtualEntry(options = {}) {
     const { realEntry } = options;
@@ -27,4 +27,4 @@ root.render(React.createElement(App));
     };
 }
 
-module.exports = virtualEntry;
+export default virtualEntry

@@ -1,4 +1,4 @@
-import { boundlerOptions, BuildOptions } from "./types";
+import { boundlerOptions } from "./types";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
@@ -7,8 +7,9 @@ import virtualEntry from "./plugins/rollup-plugin-virtual-entry";
 import html from "@rollup/plugin-html";
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
-import path from "path";
 import postcss from "rollup-plugin-postcss";
+import path from "path";
+
 
 export default function usePlugins(boundlerOptions: boundlerOptions) {
 
