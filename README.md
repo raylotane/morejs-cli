@@ -34,29 +34,6 @@ npm install -g morejs-cli
 npm install --save-dev morejs-cli
 ```
 
-## 快速开始
-
-1. 在你的项目根目录下创建页面目录结构，例如：
-
-```
-src/pages/Home/index.tsx
-src/pages/About/index.tsx
-```
-
-2. 在页面组件中可直接使用 CSS 或 CSS Modules。
-
-3. 运行开发服务器：
-
-```bash
-morejs-cli --entry ./src/pages/Home --port 3000 --mode development
-```
-
-4. 构建生产包：
-
-```bash
-morejs-cli --entry ./src/pages/Home --mode production
-```
-
 ## CLI 参数
 
 - `--entry` 入口页面目录
